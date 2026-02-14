@@ -1,57 +1,63 @@
-# Last Move Game Visualization
+# 🎮 Last Move Game Visualization
 
-This project is a graphical representation of the Last Move game, which allows players to interact with the game visually using a GUI. The game features a customizable board size of 3x3, 5x5, or 7x7, and players can move their big stones and place small stones on the board.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyQt5](https://img.shields.io/badge/PyQt5-GUI-41CD52?style=for-the-badge&logo=qt&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Web-000000?style=for-the-badge&logo=flask&logoColor=white)
 
-## Project Structure
+Last Move, oyuncuların stratejik hamlelerle rakiplerini kısıtlamaya çalıştığı bir masa oyunudur. Bu proje, oyunun dinamiklerini modern bir **GUI (Grafiksel Kullanıcı Arayüzü)** üzerinden, SVG grafik desteğiyle görselleştirir.
 
-The project is organized as follows:
+## ✨ Özellikler
 
-```
+- **Esnek Tahta Boyutları:** 3x3, 5x5 veya 7x7 boyutlarında özelleştirilebilir oyun alanı.
+- **SVG Entegrasyonu:** Yüksek kaliteli `svgwrite` ile oluşturulmuş vektörel taş ve tahta grafikleri.
+- **İnteraktif GUI:** PyQt5 kullanılarak tasarlanmış, kullanıcı dostu hamle yönetimi.
+- **Oyun Mekaniği:** Büyük taş hareketleri ve küçük taş yerleştirme (bloklama) sisteminin tam simülasyonu.
+
+## 📂 Proje Yapısı
+
+```text
 last-move-visualization
 ├── src
-│   ├── main.py          # Main game logic and loop
-│   ├── gui.py           # Graphical user interface
-│   ├── assets           # Contains SVG graphics for boards and stones
-│   │   ├── board_3x3.svg
-│   │   ├── board_5x5.svg
-│   │   ├── board_7x7.svg
-│   │   ├── stone_big.svg
-│   │   └── stone_small.svg
-│   └── utils.py         # Utility functions for the project
-├── requirements.txt      # Project dependencies
-└── README.md             # Project documentation
+│   ├── main.py          # Ana oyun mantığı ve döngüsü
+│   ├── gui.py           # PyQt5 arayüz tanımlamaları
+│   ├── utils.py         # Yardımcı fonksiyonlar
+│   └── assets/          # SVG Grafikleri
+│       ├── board_*.svg  # Tahta tasarımları
+│       └── stone_*.svg  # Taş tasarımları
+├── requirements.txt     # Bağımlılıklar
+└── README.md            # Dokümantasyon
 ```
+## 🛠️ Setup Instructions
+Projeyi yerel makinenizde çalıştırmak için şu adımları izleyin:
 
-## Setup Instructions
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd last-move-visualization
-   ```
+1. **Depoyu Klonlayın**:
+   Python'un yüklü olduğundan emin olun ve ardından gerekli bağımlılıkları yükleyin:
+   
+2. **Oyunu Çalıştırın**:
+   Ana scripti çalıştırarak oyunu başlatın:
 
-2. **Install dependencies**:
-   Make sure you have Python installed, then run:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🎮 Usage Guidelines
+Tahta Seçimi: Oyun başladığında 3x3, 5x5 veya 7x7 boyutlarından birini seçmeniz istenir.
 
-3. **Run the game**:
-   Execute the main script to start the game:
-   ```bash
-   python src/main.py
-   ```
+Sıra Tabanlı Hamle: Oyuncular sırayla büyük taşlarını hareket ettirir ve stratejik noktalara küçük taşlar yerleştirir.
 
-## Usage Guidelines
+Oyun Sonu: Geçerli bir hamle yapma imkanı kalmayan (hareket alanı kısıtlanan) oyuncu oyunu kaybeder.
 
-- Upon starting the game, you will be prompted to select the board size (3, 5, or 7).
-- Players will take turns moving their big stones and placing small stones on the board.
-- The game ends when a player can no longer make a valid move.
 
-## Contributing
+## 📦 Requirements
+Projenin kararlı çalışması için aşağıdaki sürümler kullanılmaktadır:
 
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to submit a pull request.
+Flask==2.0.1
 
-## License
+PyQt5==5.15.4
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+svgwrite==1.4.1
+
+Pillow==8.2.0
+
+## 🤝 Contributing
+Katkıda bulunmak isterseniz, lütfen bir Pull Request gönderin veya iyileştirme önerileriniz için bir Issue açın. Her türlü katkı memnuniyetle karşılanır!
+
+## 📄 License
+Bu proje MIT Lisansı altında lisanslanmıştır. Detaylar için LICENSE dosyasına göz atabilirsiniz.
